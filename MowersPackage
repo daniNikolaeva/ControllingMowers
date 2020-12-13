@@ -9,7 +9,7 @@ public class Movements {
 	int input1 = sc.nextInt();
 	int input2 = sc.nextInt(); 
 	String input3 = sc.next();  //string for current location 
-	String input4 = "M M R M M R M R R M"; // string for direction to move on and acction to do
+	String input4 = "M R M"; // string for direction to move on and acction to do
 	
 	int x = Integer.parseInt(input3.split("-")[0]); // get the first position of input3,
 	int y = Integer.parseInt(input3.split("-")[1]); // get the secund position of input3,
