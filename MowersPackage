@@ -1,0 +1,60 @@
+package Mowers;
+
+import java.util.Scanner;
+
+public class Movements {
+	public static void main(String[] org ) {
+		
+	Scanner sc = new Scanner (System.in);
+	int input1 = sc.nextInt();
+	int input2 = sc.nextInt(); 
+	String input3 = sc.next();  //string for current location 
+	String input4 = "M M R M M R M R R M"; // string for direction to move on and acction to do
+	
+	int x = Integer.parseInt(input3.split("-")[0]); // get the first position of input3,
+	int y = Integer.parseInt(input3.split("-")[1]); // get the secund position of input3,
+	int x1=0;
+	int y1=0;
+	String d = input3.split("-")[2]; // get the third position of input3,
+	String[] msg = input4.split(""); // get the string of input4 
+	
+	for(int i=0; i<msg.length; i++) {   
+		x1=x; 
+		y1=y;
+		if(msg[i].equals("M")) {
+			if(d.equals("E")) 
+				x++;
+			else if(d.equals("W"))
+				x--;
+			else if(d.equals("N"))
+				y++;
+			else
+				y--;
+		}else {
+			if(d.equals("E") && msg[i].equals("L"))
+				d="N";
+			else if(d.equals("E") && msg[i].equals("R"))
+				d="S";
+			else if(d.equals("W") && msg[i].equals("L"))
+				d="S";
+			else if(d.equals("W") && msg[i].equals("R"))
+				d="N";
+			else if(d.equals("N") && msg[i].equals("L"))
+				d="w";
+			else if(d.equals("N") && msg[i].equals("R"))
+				d="E";
+			else if(d.equals("S") && msg[i].equals("L"))
+				d="E";
+			else if(d.equals("S") && msg[i].equals("R"))
+				d="W";
+		}
+	}
+	if(x>input1 || x<0 || y>input2 || y<0) 
+		
+		System.out.print(x1+"-"+y1+"-"+d);
+		// return (x1+"-"+y1+"-"+d);
+	else
+		System.out.print(x+"-"+y+"-"+d);
+		//return (x+"-"+y+"-"+d);
+	}
+}
